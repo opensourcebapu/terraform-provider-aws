@@ -119,49 +119,49 @@ func Provider() terraform.ResourceProvider {
 			"insecure": {
 				Type:        schema.TypeBool,
 				Optional:    true,
-				Default:     false,
+				Default:     schema.EnvDefaultFunc("TF_AWS_INSECURE", false),
 				Description: descriptions["insecure"],
 			},
 
 			"skip_credentials_validation": {
 				Type:        schema.TypeBool,
 				Optional:    true,
-				Default:     false,
+				Default:     schema.EnvDefaultFunc("TF_AWS_SKIP_CREDENTIALS_VALIDATION", false),
 				Description: descriptions["skip_credentials_validation"],
 			},
 
 			"skip_get_ec2_platforms": {
 				Type:        schema.TypeBool,
 				Optional:    true,
-				Default:     false,
+				Default:     schema.EnvDefaultFunc("TF_AWS_SKIP_GET_EC2_PLATFORMS", false),
 				Description: descriptions["skip_get_ec2_platforms"],
 			},
 
 			"skip_region_validation": {
 				Type:        schema.TypeBool,
 				Optional:    true,
-				Default:     false,
+				Default:     schema.EnvDefaultFunc("TF_AWS_SKIP_REGION_VALIDATION", false),
 				Description: descriptions["skip_region_validation"],
 			},
 
 			"skip_requesting_account_id": {
 				Type:        schema.TypeBool,
 				Optional:    true,
-				Default:     false,
+				Default:     schema.EnvDefaultFunc("TF_AWS_SKIP_REQUESTING_ACCOUNT_ID", false),
 				Description: descriptions["skip_requesting_account_id"],
 			},
 
 			"skip_metadata_api_check": {
 				Type:        schema.TypeBool,
 				Optional:    true,
-				Default:     false,
+				Default:     schema.EnvDefaultFunc("TF_AWS_SKIP_METADATA_API_CHECK", false),
 				Description: descriptions["skip_metadata_api_check"],
 			},
 
 			"s3_force_path_style": {
 				Type:        schema.TypeBool,
 				Optional:    true,
-				Default:     false,
+				Default:     schema.EnvDefaultFunc("TF_AWS_S3_FORCE_PATH_STYLE", false),
 				Description: descriptions["s3_force_path_style"],
 			},
 		},
